@@ -16,7 +16,7 @@ template<typename T> class Airplane
 		Airplane( const Airplane& otherAirplane ) :_name(otherAirplane.getName()),
 												   _load(otherAirplane.getLoad()){};
 
-		~Airplane();
+		~Airplane(){};
 
 		bool	isEqual( const string& name ) const;
 		bool	isEqual( const Airplane& otherAirplane ) const;
@@ -31,6 +31,26 @@ template<typename T> class Airplane
 //*********************************************************************
 //********************** YOUR CODE STARTS HERE ************************
 //*********************************************************************
+
+template<typename T>
+string Airplane<T>::getName() const {
+    return _name;
+}
+
+template<typename T>
+T Airplane<T>::getLoad() const {
+    return _load;
+}
+
+template<typename T>
+bool Airplane<T>::isEqual(const string &name) const {
+    return _name == name;
+}
+
+template<typename T>
+bool Airplane<T>::isEqual(const Airplane &otherAirplane) const {
+    return _name == otherAirplane.getName();
+}
 
 
 #endif
