@@ -8,4 +8,4 @@ include_directories(.)
 add_executable(HW4_AttachedFiles
         Airplane.h
         main.cpp
-        Terminal.h)
+        Terminal.h Airplane.cpp Terminal.cpp)

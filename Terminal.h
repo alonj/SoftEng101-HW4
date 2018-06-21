@@ -27,8 +27,10 @@ private:
 	T						_terminalLoad;
 
 public:
-	Terminal(const string& termnType, T maxTermnLoad );
-	Terminal(const Terminal& otherTerminal);
+	Terminal(const string& termnType, T maxTermnLoad ): _termnType(termnType),
+														_maxTermnLoad(maxTermnLoad){};
+	Terminal(const Terminal& otherTerminal): _termnType(otherTerminal.get_termnType()),
+											_maxTermnLoad(otherTerminal.get_maxTermnLoad()){};
 
 	~Terminal();
 
@@ -37,6 +39,14 @@ public:
 	bool addPlane( Airplane<T>* newAirplane );
 	bool delPlane( Airplane<T>* newAirplane );
 	bool hasPlane( const string& name ) const;
+
+	const string &get_termnType() const {
+		return _termnType;
+	}
+
+	const T get_maxTermnLoad() const {
+		return _maxTermnLoad;
+	}
 
 	void print() const;
 };

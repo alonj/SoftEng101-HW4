@@ -12,8 +12,9 @@ template<typename T> class Airplane
 		T			 _load;
 
 	public:
-		Airplane( const string& name, const T& load );
-		Airplane( const Airplane& otherAirplane );
+		Airplane( const string& name, const T& load ) : _name(name), _load(load) {};
+		Airplane( const Airplane& otherAirplane ) :_name(otherAirplane.getName()),
+												   _load(otherAirplane.getLoad()){};
 
 		~Airplane();
 
@@ -23,6 +24,8 @@ template<typename T> class Airplane
 		T		getLoad() const;
 
 };
+
+
 
 
 //*********************************************************************
