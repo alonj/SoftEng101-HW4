@@ -87,11 +87,10 @@ bool Terminal<T>::addPlane(Airplane<T> *newAirplane)
 template<typename T>
 bool Terminal<T>::delPlane(Airplane<T> *newAirplane)
 {
-    string name = newAirplane->getName();
     bool planeRegistered = false;
     typename vector<Airplane<T> *>::iterator it = _vecAirplanes.begin();
     for (; it != _vecAirplanes.end(); it++)
-        if ((*it)->isEqual(name))
+        if ((*it)->isEqual(*newAirplane))
         {
             planeRegistered = true;
             break;
